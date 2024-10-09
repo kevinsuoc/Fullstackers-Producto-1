@@ -11,7 +11,8 @@ Este proyecto tiene un **propósito educativo**:
 - Uso de Bootstrap para crear una interfaz limpia y responsiva.
 - Buenas prácticas de desarrollo web con HTML y CSS.
 
-[!NOTE]  Este proyecto **no acepta colaboradores externos** ya que su único objetivo es educativo. El código y la estructura pueden cambiar frecuentemente.
+>[!NOTE]  
+>Este proyecto **no acepta colaboradores externos** ya que su único objetivo es educativo. El código y la estructura pueden cambiar frecuentemente.
 
 ## Tecnologías Utilizadas
 
