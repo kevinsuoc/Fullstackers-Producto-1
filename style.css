@@ -1,0 +1,24 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.column {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    min-height: 200px;
+}
+
+.task {
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.task:hover {
+    background-color: #0056b3;
+}
