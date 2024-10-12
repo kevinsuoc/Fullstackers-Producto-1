@@ -10,7 +10,6 @@ body {
     border-radius: 10px;
     margin: 50px;
     padding: 0;
-    min-height: 80vh;
 }
 
 .column-name {
@@ -20,17 +19,30 @@ body {
     width: 100%;
     padding: 10px;
     text-align: center;
+    margin:0px;
+}
+
+.create-task-button {
+    border: 0px;
+    background-color: #86b2f0;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .task {
-    background-color: #007bff;
+    background-color: #00ffff;
     color: white;
-    padding: 8px;
+    padding: 20px;
     margin: 5px 0;
     border-radius: 3px;
     cursor: pointer;
 }
 
+.tasks{
+    background-color: red;
+    padding: 20px;
+}
 .task:hover {
     background-color: #0056b3;
 }

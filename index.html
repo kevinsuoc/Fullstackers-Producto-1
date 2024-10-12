@@ -64,9 +64,8 @@
         </button> 
     </div> -->
 
-    <!-- Modal para agregar una nueva tarea -->
-    <!-- 
-    <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+    <!-- Modal para agregar una nueva tarea --> 
+    <div class="modal createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -100,7 +99,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
 
      <!-- Modal de Confirmación de Eliminación -->
@@ -164,14 +163,26 @@
     <!-- Contenedor de columnas -->
     <div class="container mt-4">
         <div class="row">
-            <div class="col column" id="column1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h5 class="column-name">To-Do</h5>
+            <div class="col" id="column1">
+                <div class="column">
+                    <h5 class="column-name">To-Do</h5>
+                    <button type="button" class="create-task-button" data-bs-toggle="modal" data-bs-target=".createTaskModal">+ nueva tarjeta</button>
+                    <div class="tasks"></div>
+                </div>
             </div>
-            <div class="col column" id="column2" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h5 class="column-name">Doing</h5>
+            <div class="col" id="column2">
+                <div class="column">
+                    <h5 class="column-name">Doing</h5>
+                    <button type="button" class="create-task-button" data-bs-toggle="modal" data-bs-target=".createTaskModal">+ nueva tarjeta</button>
+                    <div class="tasks"></div>
+                </div>
             </div>
-            <div class="col column" id="column3" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h5 class="column-name">Done</h5>
+            <div class="col" id="column3">
+                <div class="column">
+                    <h5 class="column-name">Done</h5>
+                    <button type="button" class="create-task-button" data-bs-toggle="modal" data-bs-target=".createTaskModal">+ nueva tarjeta</button>
+                    <div class="tasks"></div>
+                </div>
             </div>
         </div>
     </div>   
