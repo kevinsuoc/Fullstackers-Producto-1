@@ -23,6 +23,12 @@ body {
     background-color: #0056b3;
 }
 
+
+.titulo-dashboard{
+    margin-bottom: 100px;
+    font-weight: bold;     
+}
+
 .color{
     background: #e96443;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
@@ -30,6 +36,13 @@ background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, F
 
 }
 
+.crearTablero{
+    
+        max-width: 300px; /* Ancho máximo de la tarjeta */
+        margin: auto; /* Centrar la tarjeta */
+    
+    
+}
 /* Estilo para el logo en la barra de navegación */
 .navbar {
     background: #e96443; /* fondo del navbar */
