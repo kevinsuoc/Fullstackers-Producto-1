@@ -1,4 +1,13 @@
 // INTERFAZ 2: Validación y creación de tareas
+
+const createTaskModal = document.getElementById("createTaskModal");
+
+let buttonColumnSource = null;
+
+createTaskModal.addEventListener("show.bs.modal", (event) => {
+    buttonColumnSource = event.relatedTarget.getAttribute("data-click-source");
+});
+
 const form = document.getElementById('taskForm');
 
 form.addEventListener('submit', function(event) {
@@ -42,8 +51,14 @@ form.addEventListener('submit', function(event) {
     }
 
     // Si todo es válido, crear nueva tarea
-    if (isValid) {
-        const taskList = document.getElementById('column1'); // Agregar a la primera columna
+    if (isValid) { 
+        switch(buttonColumnSource){
+            case "todo": taskList = document.getElementById("todo-tasks"); break;
+            case "doing": taskList = document.getElementById("doing-tasks"); break;
+            case "done": taskList = document.getElementById("done-tasks"); break;
+            default: taskList = document.getElementById("todo-tasks");
+        }
+
         const newTask = document.createElement('div');
         newTask.className = 'task card p-2 mb-2';
         newTask.draggable = true;
@@ -69,6 +84,7 @@ form.addEventListener('submit', function(event) {
 
         // Cerrar modal
         const modal = bootstrap.Modal.getInstance(document.getElementById('addTaskModal'));
-        modal.hide();
+        if (modal)
+            modal.hide();
     }
 });

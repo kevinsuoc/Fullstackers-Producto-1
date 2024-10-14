@@ -9,19 +9,13 @@
 </head>
 
 <body>
-    <!-- Navbar: BS Component -->
-    <!-- bg-body-tertiary: BS color -->
-    <!-- container-fluid: width 100% -->
-    <!-- d-flex: makes flex -->
-    <!-- justify-content-center: flex center -->
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
         <div class="container-fluid d-flex justify-content-center">
             <a class="navbar-brand">FULLSTACKERS</a>
         </div>
     </nav>
 
     <!-- Pantalla de Dashboard -->
-    <!-- mt-x: sets top margin -->
     <!-- 
     <div class="container mt-4 text-center">
         <h2>Dashboard</h2>
@@ -56,16 +50,8 @@
         </div>
     </div> -->
 
-    <!-- Botón para agregar nueva tarea -->
-    <!--
-    <div class="container mt-4 text-center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
-            Añadir Nueva Tarea
-        </button> 
-    </div> -->
-
     <!-- Modal para agregar una nueva tarea --> 
-    <div class="modal createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+    <div class="modal" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -102,8 +88,7 @@
     </div>
 
 
-     <!-- Modal de Confirmación de Eliminación -->
-    <!-- 
+    <!-- Modal de Confirmación de Eliminación -->
     <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -120,10 +105,9 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal para editar una tarea existente -->
-    <!-- 
     <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -158,55 +142,35 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Contenedor de columnas -->
     <div class="container mt-4">
         <div class="row">
-            <div class="col" id="column1">
+            <div class="col">
                 <div class="column">
                     <h5 class="column-name">To-Do</h5>
-                    <button type="button" class="create-task-button" data-bs-toggle="modal" data-bs-target=".createTaskModal">+ nueva tarjeta</button>
-                    <div class="tasks"></div>
+                    <div class="tasks" id="todo-tasks"></div>   
+                    <button type="button" class="create-task-button btn btn-primary" data-click-source="todo" data-bs-toggle="modal" data-bs-target="#createTaskModal">+ nueva tarjeta</button>
                 </div>
             </div>
-            <div class="col" id="column2">
+            <div class="col">
                 <div class="column">
                     <h5 class="column-name">Doing</h5>
-                    <button type="button" class="create-task-button" data-bs-toggle="modal" data-bs-target=".createTaskModal">+ nueva tarjeta</button>
-                    <div class="tasks"></div>
+                    <div class="tasks" id="doing-tasks"></div>
+                    <button type="button" class="create-task-button btn btn-primary" data-click-source="doing" data-bs-toggle="modal" data-bs-target="#createTaskModal">+ nueva tarjeta</button>
                 </div>
             </div>
-            <div class="col" id="column3">
+            <div class="col">
                 <div class="column">
                     <h5 class="column-name">Done</h5>
-                    <button type="button" class="create-task-button" data-bs-toggle="modal" data-bs-target=".createTaskModal">+ nueva tarjeta</button>
-                    <div class="tasks"></div>
+                    <div class="tasks" id="done-tasks"></div>
+                    <button type="button" class="create-task-button btn btn-primary" data-click-source="done" data-bs-toggle="modal" data-bs-target="#createTaskModal">+ nueva tarjeta</button>
                 </div>
             </div>
         </div>
     </div>   
     
-    <!-- Modal para renombrar columna -->
-    <!-- 
-    <div class="modal fade" id="renameColumnModal" tabindex="-1" aria-labelledby="renameColumnModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="renameColumnModalLabel">Renombrar Columna</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" id="newColumnName" class="form-control" placeholder="Nuevo nombre de columna">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="confirmRenameButton">Renombrar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <script src="Scripts/Interfaz1.js"></script>
     <script src="Scripts/Interfaz2.js"></script>
     <script src="Scripts/Interfaz3.js"></script>

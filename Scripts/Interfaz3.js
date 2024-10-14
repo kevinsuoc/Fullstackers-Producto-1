@@ -6,7 +6,7 @@
 let dragged = null;
 
 // ondragstart event listener: sets dragged if a "task" is being drag
-ondragstart = (event) => {
+ondragstart = (event) => {  
     if (event.target.classList.contains("task"))
         dragged = event.target;
     else
@@ -28,7 +28,6 @@ ondrop = (event) => {
 
     // Searchs the tree upwards until it finds a "task" or tasks column, "tasks".
     while (dropTarget && !(dropTarget.classList.contains("tasks") || dropTarget.classList.contains("task"))) {
-        console.log(dropTarget);
         dropTarget = dropTarget.parentNode;
     }
 
@@ -83,24 +82,5 @@ document.getElementById('editTaskForm').addEventListener('submit', function(even
 
     // Cerrar el modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('editTaskModal'));
-    modal.hide();
-});
-
-
-let columnToRename = '';
-
-function openRenameModal(columnId) {
-    columnToRename = columnId; // Almacenar la columna que se va a renombrar
-    const modal = new bootstrap.Modal(document.getElementById('renameColumnModal'));
-    modal.show();
-}
-
-document.getElementById('confirmRenameButton').addEventListener('click', function() {
-    const newColumnName = document.getElementById('newColumnName').value;
-    const columnElement = document.getElementById(columnToRename);
-    if (columnElement && newColumnName) {
-        columnElement.querySelector('h5').childNodes[0].nodeValue = newColumnName; // Cambiar el nombre de la columna
-    }
-    const modal = bootstrap.Modal.getInstance(document.getElementById('renameColumnModal'));
     modal.hide();
 });
