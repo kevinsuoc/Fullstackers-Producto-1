@@ -1,26 +1,65 @@
+:root{
+    --task-button-color: #242424;
+    --task-color: #00ffff;
+    --task-hover-color: #0056b3;
+    --background-color-main: #002f7a;
+    --background-color-secondary: #242424;
+    --background-color-secondary-light: #333333;
+    --typography-color-main: #dadada;
+}
+
 body {
-    background-color: #E4E0E1;
+    background-color: var(--background-color-main);
+}
+
+.navbar{
+    background-color: var(--background-color-secondary);
+}
+
+.navbar-brand{
+    color: var(--typography-color-main);
 }
 
 .column {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
+    border: 3px solid var(--border-color-column);
+    background-color: var(--background-color-secondary);
+    border-radius: 10px;
+    margin: 50px;
+    padding: 0;
+}
+
+.column-name {
+    color: var(--typography-color-main);
+    width: 100%;
     padding: 10px;
-    margin: 10px;
-    min-height: 200px;
+    text-align: center;
+    margin:0px;
+}
+
+.create-task-button {
+    border: 0;
+    background-color: var(--task-button-color);
+    width: 100%;
 }
 
 .task {
-    background-color: #007bff;
+    background-color: var(--task-color);
     color: white;
-    padding: 8px;
+    padding: 20px;
     margin: 5px 0;
     border-radius: 3px;
     cursor: pointer;
 }
 
+.tasks{
+    border: 10px solid var(--background-color-secondary);
+    border-radius: 15px;
+    background-color: var(--background-color-secondary-light);
+    padding: 10px;
+}
+
 .task:hover {
-    background-color: #0056b3;
+    background-color: var(--task-hover-color);
 }
 
 
