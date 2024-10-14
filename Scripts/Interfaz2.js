@@ -1,6 +1,6 @@
 // INTERFAZ 2: Validación y creación de tareas
 
-const createTaskModal = document.getElementById("createTaskModal");
+const createTaskModal = document.getElementById("addTaskModal");
 
 let buttonColumnSource = null;
 

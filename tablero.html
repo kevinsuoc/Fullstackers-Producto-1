@@ -9,49 +9,21 @@
 </head>
 
 <body>
-    <nav class="navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar color">
         <div class="container-fluid d-flex justify-content-center">
             <a class="navbar-brand">FULLSTACKERS</a>
         </div>
     </nav>
 
-    <!-- Pantalla de Dashboard -->
-    <!-- 
-    <div class="container mt-4 text-center">
-        <h2>Dashboard</h2>
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Agregar Tarea</h5>
-                        <p class="card-text">Crea una nueva tarea para tu lista de pendientes.</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
-                            Ir a Agregar Tarea
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Visualizar Tareas</h5>
-                        <p class="card-text">Consulta y organiza tus tareas en columnas.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Eliminar Tarea</h5>
-                        <p class="card-text">Elimina tareas que ya no necesites.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <!-- Botón para volver al Dashboard -->
+    <div class="container mt-2 text-start">
+        <a href="dashboard.html" class="btn btn-secondary">Volver al Dashboard</a>
+    </div>
 
-    <!-- Modal para agregar una nueva tarea --> 
-    <div class="modal" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+    <!-- Modal para agregar una nueva tarea -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -151,21 +123,21 @@
                 <div class="column">
                     <h5 class="column-name">To-Do</h5>
                     <div class="tasks" id="todo-tasks"></div>   
-                    <button type="button" class="create-task-button btn btn-primary" data-click-source="todo" data-bs-toggle="modal" data-bs-target="#createTaskModal">+ nueva tarjeta</button>
+                    <button type="button" class="create-task-button btn btn-primary" data-click-source="todo" data-bs-toggle="modal" data-bs-target="#addTaskModal">+ nueva tarjeta</button>
                 </div>
             </div>
             <div class="col">
                 <div class="column">
                     <h5 class="column-name">Doing</h5>
                     <div class="tasks" id="doing-tasks"></div>
-                    <button type="button" class="create-task-button btn btn-primary" data-click-source="doing" data-bs-toggle="modal" data-bs-target="#createTaskModal">+ nueva tarjeta</button>
+                    <button type="button" class="create-task-button btn btn-primary" data-click-source="doing" data-bs-toggle="modal" data-bs-target="#addTaskModal">+ nueva tarjeta</button>
                 </div>
             </div>
             <div class="col">
                 <div class="column">
                     <h5 class="column-name">Done</h5>
                     <div class="tasks" id="done-tasks"></div>
-                    <button type="button" class="create-task-button btn btn-primary" data-click-source="done" data-bs-toggle="modal" data-bs-target="#createTaskModal">+ nueva tarjeta</button>
+                    <button type="button" class="create-task-button btn btn-primary" data-click-source="done" data-bs-toggle="modal" data-bs-target="#addTaskModal">+ nueva tarjeta</button>
                 </div>
             </div>
         </div>
