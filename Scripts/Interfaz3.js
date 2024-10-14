@@ -1,53 +1,5 @@
 // INTERFAZ 3: Drag & Drop de tareas entre columnas
 
-// Source: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event
-
-// HTML DOM Element
-let dragged = null;
-
-// ondragstart event listener: sets dragged if a "task" is being drag
-ondragstart = (event) => {  
-    if (event.target.classList.contains("task"))
-        dragged = event.target;
-    else
-        dragged = null;
-};
-
-// ondragover event listener. If not present, the browser will default to doing nothing
-ondragover = (event) => {
-    event.preventDefault();
-};
-
-// ondrop event listener.
-ondrop = (event) => {
-    // Necessary to override browser default
-    event.preventDefault();
-
-    // DOM element variable
-    let dropTarget = event.target;
-
-    // Searchs the tree upwards until it finds a "task" or tasks column, "tasks".
-    while (dropTarget && !(dropTarget.classList.contains("tasks") || dropTarget.classList.contains("task"))) {
-        dropTarget = dropTarget.parentNode;
-    }
-
-    // If not found or it's the dragged element, exits
-    if (!dropTarget || dropTarget === dragged) {
-        return ;
-    }
-
-    // Remove from source and append above a task or at the end of the task list
-    if (dropTarget.classList.contains("tasks")) {
-        dragged.parentNode.removeChild(dragged);
-        dropTarget.appendChild(dragged);
-    } else if (dropTarget.classList.contains("task")) {
-        dragged.parentNode.removeChild(dragged);
-        dropTarget.insertAdjacentElement("beforebegin", dragged);
-    }
-    
-    dragged = null;
-};
-
 // INTERFAZ 3: Modificación dinámica de subelementos
 // Esta variable almacenará la tarea a editar
 let taskToEdit = '';
