@@ -1,11 +1,11 @@
 :root{
     --task-button-color: #242424;
-    --task-color: #06a4b9;
+    --task-color: #1170dd;
     --task-hover-color: #04738f;
     --background-color-main: #98c1d9;
     --background-color-secondary: #242424;
-    --background-color-secondary-light: #ee6c4d;
-    --typography-color-main: #000000;
+    --background-color-secondary-light: #ffffff;
+    --typography-color-main: #ffffff;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
     margin:0px;
     border: 10px solid var(--background-color-secondary);
     border-radius: 15px;
-    background-color:#f16c2f;
+    background-color:#3a3a3a;
     border-radius: 50px;
     margin-bottom: 5px;
     box-shadow: inset 0 0 2px rgb(0, 0, 0); /* Sombra interior */
@@ -65,7 +65,7 @@ body {
     background-color: var(--background-color-secondary-light);
     padding: 10px;
     min-height: 310px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interior */
+    box-shadow: inset 0 0 20px rgba(0, 218, 247, 1); /* Sombra interior */
 }
 
 .task:hover {
