@@ -13,33 +13,33 @@
     <!-- Navbar -->
     <nav class="navbar color">
         <div class="container-fluid d-flex justify-content-center">
-            <a class="navbar-brand">FULLSTACKERS</a>
+            <a class="navbar-brand" href="/dashboard.html">FULLSTACKERS</a>
         </div>
     </nav>
 
     <!-- Botón para volver al Dashboard -->
-    <div class="container mt-2 text-start">
-        <a href="dashboard.html" class="btn btn-primary">Volver al Dashboard</a>
+    <div class="container mt-2 text-start d-flex justify-content-center">
+        <a href="dashboard.html" class="btn btn-primary sombra">Volver al Dashboard</a>
     </div>
 
     <!-- Contenedor de columnas -->
     <div class="container mt-4">
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <div class="column">
                     <h5 class="column-name">To-Do</h5>
                     <div class="tasks" id="todo-tasks"></div>   
                     <button type="button" class="create-task-button btn btn-primary botooon" data-click-source="todo" data-bs-toggle="modal" data-bs-target="#addTaskModal">+ Nueva Tarjeta</button>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-4">
                 <div class="column">
                     <h5 class="column-name">Doing</h5>
                     <div class="tasks" id="doing-tasks"></div>
                     <button type="button" class="create-task-button btn btn-primary botooon" data-click-source="doing" data-bs-toggle="modal" data-bs-target="#addTaskModal">+ Nueva Tarjeta</button>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-4">
                 <div class="column">
                     <h5 class="column-name">Done</h5>
                     <div class="tasks" id="done-tasks"></div>
@@ -47,7 +47,8 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
+      
 
     <!-- Modal para agregar una nueva tarea -->
     <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
