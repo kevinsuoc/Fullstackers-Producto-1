@@ -17,15 +17,16 @@ body {
 
 }
 .botooon{
-    margin-top: -25px;
+   margin-top: -25px; 
 }
+
 .column .column {
     border: 3px solid var(--border-color-column);
     background-color: var(--background-color-secondary);
     border-radius: 10px;
     margin: 50px;
     padding: 0;
-    min-height: 300px; /* Altura mínima para el contenedor */
+    min-height: 300px; 
 }
 
 
@@ -40,8 +41,7 @@ body {
     background-color:#3a3a3a;
     border-radius: 50px;
     margin-bottom: 5px;
-    box-shadow: inset 0 0 2px rgb(0, 0, 0); /* Sombra interior */
-    
+    box-shadow: inset 0 0 2px rgb(0, 0, 0); 
 }
 
 .create-task-button {
@@ -69,9 +69,10 @@ body {
     border-radius: 15px;
     background-color: var(--background-color-secondary-light);
     padding: 10px;
-    min-height: 310px;
+    min-height: 600px;
+   
     overflow-y: auto; 
-    box-shadow: inset 0 0 15px rgba(0, 218, 247, 1); /* Sombra interior */
+    box-shadow: inset 0 0 8px rgba(0, 218, 247, 1); 
 }
 
 .task:hover {
@@ -79,7 +80,7 @@ body {
 }
 
 .navbar.color {
-    background: #3d5a80;  /* fallback for old browsers */
+    background: #3d5a80;  
 }
 
 .navbar{
@@ -87,25 +88,25 @@ body {
 }
 
 .crearTablero{
-        max-width: 300px; /* Ancho máximo de la tarjeta */
-        margin: auto; /* Centrar la tarjeta */   
+        max-width: 300px; 
+        margin: auto;   
 }
 
 .navbar-brand {
-    font-size: 2rem; /* Aumentar el tamaño de la fuente */
-    font-weight: bold; /* Hacer la fuente más gruesa */
-    color: #ffffff; /* Cambiar el color del texto a blanco */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
-    transition: all 0.3s; /* Añadir transición suave */
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); 
+    transition: all 0.3s; 
 }
 
 .navbar-brand:hover {
-    color: var(--background-color-secondary-light); /* Color amarillo claro al pasar el ratón */
-    transform: scale(1.05); /* Aumentar ligeramente al pasar el ratón */
+    color: var(--background-color-secondary-light);
+    transform: scale(1.05); 
 }
 
 .bordetablero{
-    box-shadow: inset 0 0 10px rgba(0, 218, 247, 1); /* Sombra interior */
+    box-shadow: inset 0 0 10px rgba(0, 218, 247, 1); 
     border: 3px solid;
     border-radius: 40px;
 }
