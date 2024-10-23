@@ -66,10 +66,10 @@ form.addEventListener('submit', function(event) {
         newTask.id = `task${taskList.children.length + 1}`; // Asignar ID único
 
         newTask.innerHTML = `
-            <h5>${title.value}</h5>
-            <p>${description.value}</p>
+            <h5 class="titulo">${title.value}</h5>
+            <p class="descripcion">${description.value}</p>
             <p>Fecha límite: ${dueDate.value}</p>
-            <p>Responsable: ${assignee.value}</p> <!-- Añadir el responsable -->
+            <p class="responsable">Responsable: ${assignee.value}</p> <!-- Añadir el responsable -->
             <button onclick="confirmDelete('${newTask.id}')" class="btn btn-danger btn-sm">Eliminar</button>
             <button onclick="editTask('${newTask.id}')" class="btn btn-warning btn-sm">Editar</button>
         `;
