@@ -40,6 +40,46 @@ ondrop = (event) => {
         draggedTask.parentNode.removeChild(draggedTask);
         dropTarget.insertAdjacentElement("beforebegin", draggedTask);
     }
+    // console.log(dropTarget);
+    const parentId = dropTarget.id;
+    // console.log('ID del elemento padre:', parentId); 
+    // console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    // console.log(draggedTask);
+    // console.log(dropTarget.id);
+
+    moverLS(draggedTask.id, parentId);
+
     
     draggedTask = null;
 };
+
+
+function moverLS(taskId, idColumnaTxt){
+    const boards = JSON.parse(localStorage.getItem('boards')) || {};
+    const para = new URLSearchParams(window.location.search);
+    const urlId = para.get('id');
+    // console.log('ID del tablero:', urlId);
+    // console.log(boards);
+    // console.log(boards[urlId]);
+    // console.log(boards[urlId].cards);
+    // console.log('ID de la tarea:', taskId);
+
+    if (boards[urlId] && boards[urlId].cards) {
+        const indiceTarea = boards[urlId].cards.findIndex(tarea => tarea.id === taskId);
+        console.log('Indice de la tarea:', indiceTarea);
+        console.log(boards[urlId].cards[indiceTarea]);
+        console.log(boards[urlId].cards[taskId]);
+        if (indiceTarea !== -1) {
+            if(idColumnaTxt=="todo-tasks"){
+                idColumna=1;
+            }else if(idColumnaTxt=="doing-tasks"){
+                idColumna=2;
+            }else if(idColumnaTxt=="done-tasks"){
+                idColumna=3;
+            }
+            boards[urlId].cards[indiceTarea].idColumna=idColumna;
+        }
+    }
+
+    localStorage.setItem('boards', JSON.stringify(boards));
+}   

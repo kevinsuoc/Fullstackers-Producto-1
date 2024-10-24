@@ -52,18 +52,39 @@ form.addEventListener('submit', function(event) {
 
     // Si todo es válido, crear nueva tarea
     if (isValid) { 
+        var idColumnaSw=0;
+        const boards = JSON.parse(localStorage.getItem('boards')) || {};
+        const para = new URLSearchParams(window.location.search);
+        const urlId = para.get('id');
         switch(buttonColumnSource){
-            case "todo": taskList = document.getElementById("todo-tasks"); break;
-            case "doing": taskList = document.getElementById("doing-tasks"); break;
-            case "done": taskList = document.getElementById("done-tasks"); break;
-            default: taskList = document.getElementById("todo-tasks");
+            case "todo": 
+                taskList = document.getElementById("todo-tasks"); 
+                idColumnaSw=1;
+                break;
+            case "doing": 
+                taskList = document.getElementById("doing-tasks");
+                idColumnaSw=2;
+                break;
+            case "done": 
+                taskList = document.getElementById("done-tasks"); 
+                idColumnaSw=3;
+                break;
+            default: 
+                taskList = document.getElementById("todo-tasks");
+                idColumnaSw=1;
+                break;
         }
 
         const newTask = document.createElement('div');
         newTask.className = 'task card p-2 mb-2';
         newTask.draggable = true;
-        newTask.ondragstart = function(event) { drag(event); };
-        newTask.id = `${taskList.children.length}`; // Asignar ID único
+        newTask.ondragstart = function(event) {  };
+        //drag(event);
+        if (!boards[urlId].cards || boards[urlId].cards.length === 0) {
+            newTask.id = '0'; 
+        } else {
+            newTask.id = `${boards[urlId].cards.length}`;
+        }
 
         newTask.innerHTML = `
             <h5 class="titulo">${title.value}</h5>
@@ -76,10 +97,6 @@ form.addEventListener('submit', function(event) {
 
         taskList.appendChild(newTask); // Agregar tarea a la column
 
-        const boards = JSON.parse(localStorage.getItem('boards')) || {};
-        const para = new URLSearchParams(window.location.search);
-        const urlId = para.get('id');
-
         console.log('ID del tablero:', urlId);
         const tarjeta ={
             id: newTask.id,
@@ -87,6 +104,7 @@ form.addEventListener('submit', function(event) {
             description: description.value,
             dueDate: dueDate.value,
             assignee: assignee.value,
+            idColumna: idColumnaSw,
         }
         if (boards[urlId]) {
             if (!Array.isArray(boards[urlId].cards)) {

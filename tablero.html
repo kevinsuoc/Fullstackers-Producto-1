@@ -146,6 +146,9 @@
         // En tablero.html
         window.onload = function() {
             const listaTodo = document.getElementById('todo-tasks');
+            const listaDoing = document.getElementById('doing-tasks');
+            const listaDone = document.getElementById('done-tasks');
+
             const para = new URLSearchParams(window.location.search);
             const urlId = para.get('id');
 
@@ -156,7 +159,8 @@
                 const nuevaTarea = document.createElement('div');
                 nuevaTarea.className = 'task card p-2 mb-2';
                 nuevaTarea.draggable = true;
-                nuevaTarea.ondragstart = function(event) { drag(event); };
+                nuevaTarea.ondragstart = function(event) { };
+                nuevaTarea.id = carta.id;
 
                 nuevaTarea.innerHTML = `
                     <h5 class="titulo">${carta.title}</h5>
@@ -167,7 +171,20 @@
                     <button onclick="editTask('${carta.id}')" class="btn btn-warning btn-sm">Editar</button>
                 `;
 
-                listaTodo.appendChild(nuevaTarea);
+                switch(carta.idColumna){
+                    case 1:
+                        listaTodo.appendChild(nuevaTarea);
+                        break;
+                    case 2:
+                        listaDoing.appendChild(nuevaTarea);
+                        break;
+                    case 3:
+                        listaDone.appendChild(nuevaTarea);
+                        break;
+                    default:
+                        listaTodo.appendChild(nuevaTarea);
+                        break;
+                }
             });
 
         };
