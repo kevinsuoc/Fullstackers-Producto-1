@@ -74,14 +74,36 @@ form.addEventListener('submit', function(event) {
             <button onclick="editTask('${newTask.id}')" class="btn btn-warning btn-sm">Editar</button>
         `;
 
-        taskList.appendChild(newTask); // Agregar tarea a la columna
+        taskList.appendChild(newTask); // Agregar tarea a la column
 
+        const boards = JSON.parse(localStorage.getItem('boards')) || {};
+        const para = new URLSearchParams(window.location.search);
+        const urlId = para.get('id');
+
+        console.log('ID del tablero:', urlId);
+        const tarjeta ={
+            title: title.value,
+            description: description.value,
+            dueDate: dueDate.value,
+            assignee: assignee.value,
+        }
+        if (boards[urlId]) {
+            if (!Array.isArray(boards[urlId].cards)) {
+            boards[urlId].cards = [];
+            }
+            boards[urlId].cards.push(tarjeta);
+        } else {
+            boards[urlId] = { cards: [tarjeta] };
+        }
+        localStorage.setItem('boards', JSON.stringify(boards));
         // Reiniciar formulario
         title.value = '';
         description.value = '';
         dueDate.value = '';
-        assignee.value = ''; // Reiniciar el campo de responsable
+        assignee.value = ''; 
 
+        // Verifica que los valores sean correctos
+        console.log(boards);
         // Cerrar modal
         const modal = bootstrap.Modal.getInstance(document.getElementById('addTaskModal'));
         if (modal)

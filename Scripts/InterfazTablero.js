@@ -9,7 +9,10 @@ document.getElementById('confirmCreateBoardButton').addEventListener('click', fu
         boardCount = Object.keys(boards).length + 1; // Incrementar el contador de tableros
 
         // Crear un nuevo tablero
-        boards[boardCount] = { name: newBoardName };
+        boards[boardCount] = { 
+            name: newBoardName,
+            cards: []
+        };
 
         // Almacenar el objeto de tableros actualizado en localStorage
         localStorage.setItem('boards', JSON.stringify(boards));
@@ -19,8 +22,9 @@ document.getElementById('confirmCreateBoardButton').addEventListener('click', fu
         const boardItem = document.createElement('div');
         boardItem.className = 'alert alert-info alert-dismissible fade show mt-2';
         boardItem.setAttribute('data-id', boardCount);
+        console.log(newBoardName);
         boardItem.innerHTML = `
-            ${newBoardName}
+            <h1>${newBoardName}</h1>
             <button type="button" class="btn-close" aria-label="Close" onclick="deleteBoard(${boardCount})"></button>
             <a href="tablero.html?id=${boardCount}&name=${encodeURIComponent(newBoardName)}" class="btn btn-link">Abrir</a>
         `;
@@ -64,12 +68,12 @@ window.onload = function() {
         // Crea un elemento en la lista de tableros
         const boardList = document.getElementById('boardList');
         const boardItem = document.createElement('div');
-        boardItem.className = 'alert alert-info alert-dismissible fade show mt-2';
+        boardItem.className = 'col-3 cust alert alert-info alert-dismissible fade show mt-2';
         boardItem.setAttribute('data-id', id);
         boardItem.innerHTML = `
-            ${boardName}
-            <button type="button" class="btn-close" aria-label="Close" onclick="deleteBoard(${id})"></button>
+            <h3>${boardName}</h3>
             <a href="tablero.html?id=${id}&name=${encodeURIComponent(boardName)}" class="btn btn-link">Abrir</a>
+            <button type="button" class="btn-close cerrar" aria-label="Close" onclick="deleteBoard(${id})"></button>
         `;
         boardList.appendChild(boardItem);
     }
