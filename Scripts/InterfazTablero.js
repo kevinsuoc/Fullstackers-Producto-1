@@ -62,18 +62,21 @@ function deleteBoard(boardId) {
 // Carga los tableros existentes al cargar la página
 window.onload = function() {
     const boards = JSON.parse(localStorage.getItem('boards')) || {};
+    console.log(boards);
     for (let id in boards) {
         const boardName = boards[id].name;
 
         // Crea un elemento en la lista de tableros
         const boardList = document.getElementById('boardList');
         const boardItem = document.createElement('div');
-        boardItem.className = 'col-3 cust alert alert-info alert-dismissible fade show mt-2';
+        boardItem.className = 'col-12 col-md-6 col-lg-3 cust alert alert-info alert-dismissible fade show mt-2 d-flex justify-content-between align-items-center';
         boardItem.setAttribute('data-id', id);
         boardItem.innerHTML = `
-            <h3>${boardName}</h3>
-            <a href="tablero.html?id=${id}&name=${encodeURIComponent(boardName)}" class="btn btn-link">Abrir</a>
-            <button type="button" class="btn-close cerrar" aria-label="Close" onclick="deleteBoard(${id})"></button>
+            <h3 class="truncate flex-grow-1">${boardName}</h3>
+            <div class="d-flex align-items-center">
+                <a href="tablero.html?id=${id}&name=${encodeURIComponent(boardName)}" class="btn btn-link">Abrir</a>
+                <button type="button" class="btn-close cerrar ms-2" aria-label="Close" onclick="deleteBoard(${id})"></button>
+            </div>
         `;
         boardList.appendChild(boardItem);
     }

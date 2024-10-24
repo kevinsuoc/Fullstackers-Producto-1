@@ -142,7 +142,36 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        // En tablero.html
+        window.onload = function() {
+            const listaTodo = document.getElementById('todo-tasks');
+            const para = new URLSearchParams(window.location.search);
+            const urlId = para.get('id');
+
+            const boards = JSON.parse(localStorage.getItem('boards')) || {};
+            const board = boards[urlId];
+
+            board.cards.forEach(carta => {
+                const nuevaTarea = document.createElement('div');
+                nuevaTarea.className = 'task card p-2 mb-2';
+                nuevaTarea.draggable = true;
+                nuevaTarea.ondragstart = function(event) { drag(event); };
+
+                nuevaTarea.innerHTML = `
+                    <h5 class="titulo">${carta.title}</h5>
+                    <p class="descripcion">${carta.description}</p>
+                    <p>Fecha límite: ${carta.dueDate}</p>
+                    <p class="responsable">Responsable: ${carta.assignee}</p> <!-- Añadir el responsable -->
+                    <button onclick="confirmDelete('${carta.id}')" class="btn btn-danger btn-sm">Eliminar</button>
+                    <button onclick="editTask('${carta.id}')" class="btn btn-warning btn-sm">Editar</button>
+                `;
+
+                listaTodo.appendChild(nuevaTarea);
+            });
+
+        };
+    </script>
     <script src="Scripts/Interfaz1.js"></script>
     <script src="Scripts/Interfaz2.js"></script>
     <script src="Scripts/Interfaz3.js"></script>

@@ -63,7 +63,7 @@ form.addEventListener('submit', function(event) {
         newTask.className = 'task card p-2 mb-2';
         newTask.draggable = true;
         newTask.ondragstart = function(event) { drag(event); };
-        newTask.id = `task${taskList.children.length + 1}`; // Asignar ID único
+        newTask.id = `${taskList.children.length}`; // Asignar ID único
 
         newTask.innerHTML = `
             <h5 class="titulo">${title.value}</h5>
@@ -82,6 +82,7 @@ form.addEventListener('submit', function(event) {
 
         console.log('ID del tablero:', urlId);
         const tarjeta ={
+            id: newTask.id,
             title: title.value,
             description: description.value,
             dueDate: dueDate.value,
