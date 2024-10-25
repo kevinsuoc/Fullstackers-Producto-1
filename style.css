@@ -141,3 +141,10 @@ body {
     max-width: 400px; 
     display: inline-block;
 }
+
+.cntr-todo{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: auto !important;
+}
