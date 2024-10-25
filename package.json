@@ -1,0 +1,19 @@
+{
+  "name": "fullstackers",
+  "version": "1.0.0",
+  "description": "Una aplicación TODO list estilo kanban.",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [
+    "html",
+    "css"
+  ],
+  "author": "fullstackers",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "serve": "^14.2.4"
+  }
+}
